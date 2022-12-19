@@ -24,10 +24,11 @@ class MainActivity : AppCompatActivity() {
             val priceShown = binding.etPriceShown.text.toString()
             val receivePrice = binding.etReceivedPrice.text.toString()
             val month = binding.etMonth.text.toString()
-            val resultPercent: Double
+            var resultPercent: Double
 
             if (priceShown.isNotEmpty() && receivePrice.isNotEmpty() && month.isNotEmpty()) {
                 resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
+                resultPercent = String.format("%.2f",resultPercent).toDouble()
                 alert(resultPercent)
                 }else{
                 makeText(this,"Maydonlarni to`ldiring!", LENGTH_LONG).show()
