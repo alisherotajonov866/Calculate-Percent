@@ -23,12 +23,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCalculate.setOnClickListener {
 
-            val priceShown = binding.etPriceShown.text.toString()
-            val receivePrice = binding.etReceivedPrice.text.toString()
+            var priceShown = binding.etPriceShown.text.toString()
+            var receivePrice = binding.etReceivedPrice.text.toString()
             val month = binding.etMonth.text.toString()
             var resultPercent: Double
 
             if (priceShown.isNotEmpty() && receivePrice.isNotEmpty() && month.isNotEmpty()) {
+                priceShown = priceShown.replace(",","")
+                receivePrice = receivePrice.replace(",","")
+
                 resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
                 resultPercent = String.format("%.2f",resultPercent).toDouble()
                 alert(resultPercent)
