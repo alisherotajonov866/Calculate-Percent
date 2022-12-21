@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Calculate Percent</string>
+    <string name="month">Oy</string>
+    <string name="receivedPrice">Qanchadan tushgani</string>
+    <string name="shownPrice">Foizsiz narx</string>
+    <string name="more">More</string>
+    <string name="clear">Tozalash</string>
+    <string name="count">Hisoblash</string>
+    <string name="action_bar">Action Bar</string>
 </resources>

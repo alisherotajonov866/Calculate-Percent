@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_percent_image"
+        android:icon="@mipmap/ic_app_image"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_percent_image"
+        android:roundIcon="@mipmap/ic_app_image"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculatePercent"
         tools:targetApi="31">
