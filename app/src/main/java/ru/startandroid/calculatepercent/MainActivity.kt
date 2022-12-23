@@ -32,11 +32,15 @@ class MainActivity : AppCompatActivity() {
                 priceShown = priceShown.replace(",","")
                 receivePrice = receivePrice.replace(",","")
 
-                resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
-                resultPercent = String.format("%.2f",resultPercent).toDouble()
-                alert(resultPercent)
+                if (receivePrice.toInt()*month.toInt()>priceShown.toInt()){
+                    resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
+                    resultPercent = String.format("%.2f",resultPercent).toDouble()
+                    alert("Foiz Hisoblandi", "$resultPercent %")
                 }else{
-                makeText(this,"Maydonlarni to`ldiring!", LENGTH_LONG).show()
+                    alert("Ogohlantirish","Siz noto'g'ri qiymat kiritdingiz!")
+                }
+                }else{
+                toast("Maydonlarni to`ldiring!")
             }
         }
 
@@ -46,17 +50,25 @@ class MainActivity : AppCompatActivity() {
                 binding.etReceivedPrice.setText("")
                 binding.etMonth.setText("")
             }else{
-                makeText(this,"Ma'lumot kiritmagansiz!", LENGTH_LONG).show()
+                toast("Ma'lumot kiritmagansiz!")
             }
+        }
+
+        binding.ivMore.setOnClickListener{
+            toast("Clicked more icon")
         }
     }
 
-    private fun alert(message:Double){
+    private fun alert(titleMessage:String, message:String){
         val alertDialog: AlertDialog = AlertDialog.Builder(this)
-            .setTitle("Foiz Hisoblandi")
-            .setMessage("$message %")
+            .setTitle(titleMessage)
+            .setMessage(message)
             .setPositiveButton("OK") { dialogInterface, _ -> dialogInterface.dismiss() }
             .create()
         alertDialog.show()
+    }
+
+    private fun toast(toastMessage: String) {
+        makeText(this,toastMessage, LENGTH_SHORT).show()
     }
 }
