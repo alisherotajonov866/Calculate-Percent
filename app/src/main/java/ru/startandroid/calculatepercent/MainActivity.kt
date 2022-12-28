@@ -1,6 +1,7 @@
 package ru.startandroid.calculatepercent
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast.*
 import androidx.appcompat.app.AlertDialog
@@ -54,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.ivInfo.setOnClickListener{
-            toast("Clicked Info icon")
+            val intent = Intent(this,Information::class.java)
+            startActivity(intent)
         }
     }
 

@@ -7,4 +7,7 @@
     <string name="clear">Tozalash</string>
     <string name="count">Hisoblash</string>
     <string name="action_bar">Action Bar</string>
+    <string name="mainInformation">Bu ilova sizga, siz bo`lib to`lash sharti bilan olgan biror mahsulotingizni, bo`lib to`lash muddati tugaganidan keyingi jami narxni, mahsulotning asl narxidan qancha foiz ko`proq ekanligini hisoblab beradi.\n</string>
+    <string name="extraInformation">Bu yerdagi:\n1-maydonga: Mahsulotning asl narxi \n2-maydonga: Mahsulot oyiga qanchadan tushgani \n3-maydonga: Necha oyga olganingizni kiritishingiz lozim.</string>
+    <string name="information">Information</string>
 </resources>
