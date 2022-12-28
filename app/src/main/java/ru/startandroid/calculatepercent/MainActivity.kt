@@ -26,18 +26,17 @@ class MainActivity : AppCompatActivity() {
             var priceShown = binding.etPriceShown.text.toString()
             var receivePrice = binding.etReceivedPrice.text.toString()
             val month = binding.etMonth.text.toString()
-            var resultPercent: Double
 
             if (priceShown.isNotEmpty() && receivePrice.isNotEmpty() && month.isNotEmpty()) {
                 priceShown = priceShown.replace(",","")
                 receivePrice = receivePrice.replace(",","")
 
                 if (receivePrice.toInt()*month.toInt()>priceShown.toInt()){
-                    resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
+                    var resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
                     resultPercent = String.format("%.2f",resultPercent).toDouble()
                     alert("Foiz Hisoblandi", "$resultPercent %")
                 }else{
-                    alert("Ogohlantirish","Siz noto'g'ri qiymat kiritdingiz!")
+                    alert("Ogohlantirish","Noto'g'ri qiymat kiritdingiz!")
                 }
                 }else{
                 toast("Maydonlarni to`ldiring!")
@@ -54,8 +53,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.ivMore.setOnClickListener{
-            toast("Clicked more icon")
+        binding.ivInfo.setOnClickListener{
+            toast("Clicked Info icon")
         }
     }
 
