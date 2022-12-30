@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     resultPercent = String.format("%.2f",resultPercent).toDouble()
                     alert("Foiz Hisoblandi", "$resultPercent %")
                 }else{
-                    alert("Ogohlantirish","Noto'g'ri qiymat kiritdingiz!")
+                    alert("Ogohlantirish","Noto`g`ri qiymat kiritdingiz!")
                 }
                 }else{
                 toast("Maydonlarni to`ldiring!")
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 binding.etReceivedPrice.setText("")
                 binding.etMonth.setText("")
             }else{
-                toast("Ma'lumot kiritmagansiz!")
+                toast("Ma`lumot kiritmagansiz!")
             }
         }
 
