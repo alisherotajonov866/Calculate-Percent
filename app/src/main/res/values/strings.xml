@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Calculate Percent</string>
+    <string name="priceShown">Mahsulotning asl narxi</string>
+    <string name="priceReceived">Qanchadan tushgani</string>
     <string name="month">Oy</string>
-    <string name="receivedPrice">Qanchadan tushgani</string>
-    <string name="shownPrice">Foizsiz narx</string>
     <string name="info">Info</string>
     <string name="clear">Tozalash</string>
     <string name="count">Hisoblash</string>

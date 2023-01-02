@@ -24,30 +24,31 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCalculate.setOnClickListener {
 
-            var priceShown = binding.etPriceShown.text.toString()
-            var receivePrice = binding.etReceivedPrice.text.toString()
+            val priceShown = binding.etPriceShown.text.toString()
+            val priceReceived = binding.etPriceReceived.text.toString()
             val month = binding.etMonth.text.toString()
 
-            if (priceShown.isNotEmpty() && receivePrice.isNotEmpty() && month.isNotEmpty()) {
-                priceShown = priceShown.replace(",","")
-                receivePrice = receivePrice.replace(",","")
+            if (priceShown.isNotEmpty() && priceReceived.isNotEmpty() && month.isNotEmpty()) {
+                val priceShownDouble = priceShown.toDouble()
+                val priceReceivedInt = priceReceived.toInt()
+                val monthInt = month.toInt()
 
-                if (receivePrice.toInt()*month.toInt()>priceShown.toInt()){
-                    var resultPercent = (receivePrice.toInt()*month.toInt() - priceShown.toInt())/priceShown.toDouble() * 100
-                    resultPercent = String.format("%.2f",resultPercent).toDouble()
-                    alert("Foiz Hisoblandi", "$resultPercent %")
+                if (priceReceivedInt*monthInt>priceShownDouble){
+                    val resultPercent = (priceReceivedInt*monthInt - priceShownDouble)/priceShownDouble * 100
+                    alert("Foiz Hisoblandi", String.format("%.2f",resultPercent))
                 }else{
                     alert("Ogohlantirish","Noto`g`ri qiymat kiritdingiz!")
                 }
-                }else{
+
+            }else{
                 toast("Maydonlarni to`ldiring!")
             }
         }
 
         binding.btnClear.setOnClickListener{
-            if (binding.etPriceShown.text!!.isNotEmpty() || binding.etReceivedPrice.text!!.isNotEmpty() || binding.etMonth.text!!.isNotEmpty()) {
+            if (binding.etPriceShown.text!!.isNotEmpty() || binding.etPriceReceived.text!!.isNotEmpty() || binding.etMonth.text!!.isNotEmpty()) {
                 binding.etPriceShown.setText("")
-                binding.etReceivedPrice.setText("")
+                binding.etPriceReceived.setText("")
                 binding.etMonth.setText("")
             }else{
                 toast("Ma`lumot kiritmagansiz!")
