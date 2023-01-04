@@ -9,8 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import ru.startandroid.calculatepercent.databinding.ActivityMainBinding
 import java.util.*
 
-
 class MainActivity : AppCompatActivity() {
+
+    var myTextWatcherObj = NumberTextWatcherForThousand
 
     private lateinit var binding: ActivityMainBinding
 
@@ -22,20 +23,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.etPriceShown.addTextChangedListener(NumberTextWatcherForThousand(binding.etPriceShown))
+        binding.etPriceReceived.addTextChangedListener(NumberTextWatcherForThousand(binding.etPriceReceived))
+
         binding.btnCalculate.setOnClickListener {
 
-            val priceShown = binding.etPriceShown.text.toString()
-            val priceReceived = binding.etPriceReceived.text.toString()
+            var priceShown = binding.etPriceShown.text.toString()
+            var priceReceived = binding.etPriceReceived.text.toString()
             val month = binding.etMonth.text.toString()
 
             if (priceShown.isNotEmpty() && priceReceived.isNotEmpty() && month.isNotEmpty()) {
+                priceShown = myTextWatcherObj.trimCommaOfString(priceShown)
+                priceReceived = myTextWatcherObj.trimCommaOfString(priceReceived)
+
                 val priceShownDouble = priceShown.toDouble()
                 val priceReceivedInt = priceReceived.toInt()
                 val monthInt = month.toInt()
 
                 if (priceReceivedInt*monthInt>priceShownDouble){
                     val resultPercent = (priceReceivedInt*monthInt - priceShownDouble)/priceShownDouble * 100
-                    alert("Foiz Hisoblandi", String.format("%.2f",resultPercent))
+                    alert("Foiz Hisoblandi", "${String.format("%.2f",resultPercent)} %")
                 }else{
                     alert("Ogohlantirish","Noto`g`ri qiymat kiritdingiz!")
                 }
@@ -73,4 +80,5 @@ class MainActivity : AppCompatActivity() {
     private fun toast(toastMessage: String) {
         makeText(this,toastMessage, LENGTH_SHORT).show()
     }
+
 }
