@@ -2,14 +2,15 @@ package ru.startandroid.calculatepercent
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
+import android.widget.Button
 
 class Information : AppCompatActivity() {
-    private lateinit var ivBack:ImageView
+    lateinit var ivBack:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
-        ivBack = findViewById(R.id.ivBack)
+
+        ivBack = findViewById(R.id.information_ivBack)
         ivBack.setOnClickListener{
             finish()
         }

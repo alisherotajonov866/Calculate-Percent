@@ -1,13 +1,31 @@
 <resources>
     <string name="app_name">Calculate Percent</string>
-    <string name="priceShown">Mahsulotning asl narxi</string>
-    <string name="priceReceived">Qanchadan tushgani</string>
+    <string name="price_shown">Mahsulotning asl narxi</string>
+    <string name="price_received">Qanchadan tushgani</string>
     <string name="month">Oy</string>
-    <string name="info">Info</string>
+    <string name="info">Ilova haqida</string>
     <string name="clear">Tozalash</string>
     <string name="count">Hisoblash</string>
     <string name="action_bar">Action Bar</string>
-    <string name="mainInformation">Bu ilova sizga, siz bo`lib to`lash sharti bilan olgan biror mahsulotingizni, bo`lib to`lash muddati tugaganidan keyingi jami narxni, mahsulotning asl narxidan qancha foiz ko`proq ekanligini hisoblab beradi.\n</string>
-    <string name="extraInformation">Bu yerdagi:\n1-maydonga: Mahsulotning asl narxi \n2-maydonga: Mahsulot oyiga qanchadan tushgani \n3-maydonga: Necha oyga olganingizni kiritishingiz lozim.</string>
-    <string name="information">Information</string>
+    <string name="main_information">Bu ilova sizga, siz bo`lib to`lash sharti bilan olgan biror mahsulotingizni, bo`lib to`lash muddati tugaganidan keyingi jami narxni, mahsulotning asl narxidan qancha foiz ko`proq ekanligini hisoblab beradi.\n</string>
+    <string name="extra_information">Bu yerdagi:\n1-maydonga: Mahsulotning asl narxi \n2-maydonga: Mahsulot oyiga qanchadan tushgani \n3-maydonga: Necha oyga olganingizni kiritishingiz lozim.</string>
+    <string name="settings">Sozlamalar</string>
+    <string name="change_language">Tilni o`zgartirish</string>
+    <string name="back">Orqaga</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

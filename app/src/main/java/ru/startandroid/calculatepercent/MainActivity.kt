@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.ivInfo.setOnClickListener{
-            val intent = Intent(this,Information::class.java)
+        binding.ivSettings.setOnClickListener{
+            val intent = Intent(this,SettingsActivity::class.java)
             startActivity(intent)
         }
     }

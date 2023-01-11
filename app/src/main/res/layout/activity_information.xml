@@ -20,10 +20,10 @@
 
 
         <ImageView
-            android:id="@+id/ivBack"
+            android:id="@+id/information_ivBack"
             android:layout_width="45dp"
             android:layout_height="35dp"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.03"
@@ -35,44 +35,39 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/information"
+            android:text="@string/info"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintBottom_toBottomOf="@+id/information_ivBack"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toEndOf="@+id/ivBack"
-            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+            app:layout_constraintStart_toEndOf="@+id/information_ivBack"
+            app:layout_constraintTop_toTopOf="@+id/information_ivBack" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.0"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="15dp">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:paddingTop="10dp"
+            android:text="@string/main_information"
+            android:textSize="15sp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="@string/mainInformation"
-                android:textSize="15sp">
+        </TextView>
 
-            </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/extra_information"
+            android:textSize="15sp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/extraInformation"
-                android:textSize="15sp"></TextView>
-        </LinearLayout>
-
-    </ScrollView>
+        </TextView>
+    </LinearLayout>
 
 </LinearLayout>
