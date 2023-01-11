@@ -23,45 +23,44 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.etPriceShown.addTextChangedListener(NumberTextWatcherForThousand(binding.etPriceShown))
-        binding.etPriceReceived.addTextChangedListener(NumberTextWatcherForThousand(binding.etPriceReceived))
+        binding.apply {
+            etPriceShown.addTextChangedListener(NumberTextWatcherForThousand(etPriceShown))
+            etPriceReceived.addTextChangedListener(NumberTextWatcherForThousand(etPriceReceived))
 
-        binding.btnCalculate.setOnClickListener {
+            btnCalculate.setOnClickListener {
 
-            var priceShown = binding.etPriceShown.text.toString()
-            var priceReceived = binding.etPriceReceived.text.toString()
-            val month = binding.etMonth.text.toString()
+                var priceShown = etPriceShown.text.toString()
+                var priceReceived = etPriceReceived.text.toString()
 
-            if (priceShown.isNotEmpty() && priceReceived.isNotEmpty() && month.isNotEmpty()) {
-                priceShown = myTextWatcherObj.trimCommaOfString(priceShown)
-                priceReceived = myTextWatcherObj.trimCommaOfString(priceReceived)
+                if (priceShown.isNotEmpty() && priceReceived.isNotEmpty() && etMonth.text!!.isNotEmpty()) {
+                    priceShown = myTextWatcherObj.trimCommaOfString(priceShown)
+                    priceReceived = myTextWatcherObj.trimCommaOfString(priceReceived)
 
-                val priceShownDouble = priceShown.toDouble()
-                val priceReceivedInt = priceReceived.toInt()
-                val monthInt = month.toInt()
+                    val priceShownDouble =priceShown.toDouble()
+                    val priceReceivedInt = priceReceived.toInt()
+                    val month = etMonth.text.toString().toInt()
 
-                if (priceReceivedInt*monthInt>priceShownDouble){
-                    val resultPercent = (priceReceivedInt*monthInt - priceShownDouble)/priceShownDouble * 100
-                    alert("Foiz Hisoblandi", "${String.format("%.2f",resultPercent)} %")
+                    if (priceReceivedInt*month>priceShownDouble){
+                        val resultPercent = (priceReceivedInt*month - priceShownDouble)/priceShownDouble * 100
+                        alert("Foiz Hisoblandi", "${String.format("%.2f",resultPercent)} %")
+                    }else{
+                        alert("Ogohlantirish","Noto`g`ri qiymat kiritdingiz!")
+                    }
+
                 }else{
-                    alert("Ogohlantirish","Noto`g`ri qiymat kiritdingiz!")
+                    toast("Maydonlarni to`ldiring!")
                 }
-
-            }else{
-                toast("Maydonlarni to`ldiring!")
+            }
+            btnClear.setOnClickListener{
+                if (etPriceShown.text!!.isNotEmpty() || etPriceReceived.text!!.isNotEmpty() || etMonth.text!!.isNotEmpty()) {
+                    etPriceShown.setText("")
+                    etPriceReceived.setText("")
+                    etMonth.setText("")
+                }else{
+                    toast("Ma`lumot kiritmagansiz!")
+                }
             }
         }
-
-        binding.btnClear.setOnClickListener{
-            if (binding.etPriceShown.text!!.isNotEmpty() || binding.etPriceReceived.text!!.isNotEmpty() || binding.etMonth.text!!.isNotEmpty()) {
-                binding.etPriceShown.setText("")
-                binding.etPriceReceived.setText("")
-                binding.etMonth.setText("")
-            }else{
-                toast("Ma`lumot kiritmagansiz!")
-            }
-        }
-
         binding.ivSettings.setOnClickListener{
             val intent = Intent(this,SettingsActivity::class.java)
             startActivity(intent)
