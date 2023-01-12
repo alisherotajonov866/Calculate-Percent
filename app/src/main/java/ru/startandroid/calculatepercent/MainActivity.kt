@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                     toast("Maydonlarni to`ldiring!")
                 }
             }
+
             btnClear.setOnClickListener{
                 if (etPriceShown.text!!.isNotEmpty() || etPriceReceived.text!!.isNotEmpty() || etMonth.text!!.isNotEmpty()) {
                     etPriceShown.setText("")
@@ -61,10 +62,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
         binding.ivSettings.setOnClickListener{
             val intent = Intent(this,SettingsActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun alert(titleMessage:String, message:String){
