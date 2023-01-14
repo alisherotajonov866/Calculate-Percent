@@ -12,6 +12,7 @@
     <string name="settings">Sozlamalar</string>
     <string name="change_language">Tilni o`zgartirish</string>
     <string name="back">Orqaga</string>
+    <string name="share">Ulashish</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>

@@ -20,7 +20,8 @@
     <Preference
         android:icon="@drawable/ic_share"
         app:key="share_app_key"
-        app:title="Ulashish" >
+        app:title="Ulashish">
+
     </Preference>
 
 </PreferenceScreen>
