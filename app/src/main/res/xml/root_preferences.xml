@@ -1,17 +1,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <ListPreference
-        android:defaultValue="option_1_value"
+        app:defaultValue="option_1_value"
         android:entries="@array/radio_button_options"
         android:entryValues="@array/radio_button_values"
         android:icon="@drawable/ic_language"
         android:key="change_language_key"
-        android:title="@string/change_language" />
+        android:title="@string/change_language"/>
 
     <Preference
         android:icon="@drawable/ic_info"
         app:key="about_app_key"
-        app:title="Ilova haqida">
+        app:title="@string/info">
         <intent
             android:targetClass="ru.startandroid.calculatepercent.InformationActivity"
             android:targetPackage="ru.startandroid.calculatepercent" />
@@ -20,7 +21,7 @@
     <Preference
         android:icon="@drawable/ic_share"
         app:key="share_app_key"
-        app:title="Ulashish">
+        app:title="@string/share">
 
     </Preference>
 
