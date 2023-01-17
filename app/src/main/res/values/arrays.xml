@@ -1,8 +1,8 @@
 <resources>
 
     <string-array name="radio_button_options">
-        <item>Uzbek</item>
-        <item>English</item>
+        <item>@string/english</item>
+        <item>@string/uzbek</item>
     </string-array>
     <string-array name="radio_button_values">
         <item>option_1_value</item>

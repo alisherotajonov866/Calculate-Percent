@@ -11,9 +11,8 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    var myTextWatcherObj = NumberTextWatcherForThousand
-
     private lateinit var binding: ActivityMainBinding
+    private var myTextWatcherObj = NumberTextWatcherForThousand
 
     @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         binding.apply {
             etPriceShown.addTextChangedListener(NumberTextWatcherForThousand(etPriceShown))
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                     priceShown = myTextWatcherObj.trimCommaOfString(priceShown)
                     priceReceived = myTextWatcherObj.trimCommaOfString(priceReceived)
 
-                    val priceShownDouble =priceShown.toDouble()
+                    val priceShownDouble = priceShown.toDouble()
                     val priceReceivedInt = priceReceived.toInt()
                     val month = etMonth.text.toString().toInt()
 

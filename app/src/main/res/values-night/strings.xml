@@ -1,15 +1,21 @@
 <resources>
-    <string name="app_name">Calculate Percent</string>
+    <string name="app_name" translatable="false">Calculate Percent</string>
     <string name="price_shown">Mahsulotning asl narxi</string>
     <string name="price_received">Qanchadan tushgani</string>
     <string name="month">Oy</string>
     <string name="info">Ilova haqida</string>
     <string name="clear">Tozalash</string>
     <string name="count">Hisoblash</string>
-    <string name="action_bar">Action Bar</string>
+    <string name="action_bar">Navigatsiya</string>
     <string name="main_information">Bu ilova sizga, siz bo`lib to`lash sharti bilan olgan biror mahsulotingizni, bo`lib to`lash muddati tugaganidan keyingi jami narxni, mahsulotning asl narxidan qancha foiz ko`proq ekanligini hisoblab beradi.\n</string>
     <string name="extra_information">Bu yerdagi:\n1-maydonga: Mahsulotning asl narxi \n2-maydonga: Mahsulot oyiga qanchadan tushgani \n3-maydonga: Necha oyga olganingizni kiritishingiz lozim.</string>
     <string name="settings">Sozlamalar</string>
     <string name="change_language">Tilni o`zgartirish</string>
     <string name="back">Orqaga</string>
+    <string name="share">Ulashish</string>
+    <string name="history">Tarix</string>
+    <string name="title_activity_settings">Sozlamalari Faoliyati</string>
+    <string name="uzbek">Uzbek</string>
+    <string name="english">English</string>
+
 </resources>

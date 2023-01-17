@@ -1,17 +1,9 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ListPreference
-        app:defaultValue="option_1_value"
-        android:entries="@array/radio_button_options"
-        android:entryValues="@array/radio_button_values"
-        android:icon="@drawable/ic_language"
-        android:key="change_language_key"
-        android:title="@string/change_language"/>
-
     <Preference
         android:icon="@drawable/ic_info"
-        app:key="about_app_key"
+        app:key="key_about_app"
         app:title="@string/info">
         <intent
             android:targetClass="ru.startandroid.calculatepercent.InformationActivity"
@@ -20,7 +12,7 @@
 
     <Preference
         android:icon="@drawable/ic_share"
-        app:key="share_app_key"
+        app:key="key_share_app"
         app:title="@string/share">
 
     </Preference>
